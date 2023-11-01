@@ -14,6 +14,6 @@ router.get("/", isAuthenticated, currentUser);
 router.post("/signIn-user", signInUser);
 
 // GET /logOut-user
-router.get("/logOut-user", isAuthenticated, logOutUser);
+router.post("/logOut-user", isAuthenticated, logOutUser);
 
 module.exports = router;
