@@ -7,21 +7,21 @@ const cors = require("cors");
 require("./models/database").connectDatabase();
 
 //cors
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
-    credentials: true,
-  })
-);
 // app.use(
 //   cors({
 //     origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
 //     credentials: true,
-//     maxAge: 1800,
-//     methods: "POST, GET, OPTIONS, DELETE, PUT",
-//     allowedHeaders: "*",
 //   })
 // );
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
+    credentials: true,
+    maxAge: 1800,
+    methods: "POST, GET, OPTIONS, DELETE, PUT",
+    allowedHeaders: "*",
+  })
+);
 
 //logger
 const logger = require("morgan");
