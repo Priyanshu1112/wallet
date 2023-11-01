@@ -15,10 +15,8 @@ require("./models/database").connectDatabase();
 // );
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
-    methods: "GET, POST, PUT, DELETE",
-    allowedHeaders: "Content-Type, Authorization",
-    credentials: true, // Allow credentials (e.g., cookies)
+    origin:  "https://stock-whisperer.onrender.com",
+   
   })
 );
 
