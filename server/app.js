@@ -19,7 +19,7 @@ app.use(
     credentials: true,
     maxAge: 1800,
     methods: "POST, GET, OPTIONS, DELETE, PUT",
-    allowedHeaders: "*",
+    allowedHeaders: ["content-type"],
   })
 );
 
