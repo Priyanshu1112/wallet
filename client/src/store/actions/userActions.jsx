@@ -32,7 +32,7 @@ export const asyncSignInUser = (user) => async (dispatch) => {
 
 export const asyncLogOutUser = () => async (dispatch) => {
   try {
-    const data = await axios.post("/user/logOut-user");
+    const data = await axios.get("/user/logOut-user");
     console.log(data);
     if (data.status == 200) {
       dispatch(removeAuthentication());
