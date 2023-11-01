@@ -1,0 +1,2 @@
+- in app.js cors is secure : true;
+- in jwt token httpOnly is true

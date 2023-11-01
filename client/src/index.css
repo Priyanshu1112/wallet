@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter var", sans-serif;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.signInBtn {
+  box-shadow: 6px 5px 10px #444;
+  transition: 0.3s all;
+}
+
+.signInBtn:hover {
+  box-shadow: 6px 5px 10px #222;
+}
+
+.navSide p {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
