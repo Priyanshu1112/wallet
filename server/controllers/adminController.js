@@ -14,10 +14,10 @@ exports.currentAdmin = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({ user_role: "admin", admin });
 });
 
-// exports.signUpAdmin = catchAsyncErrors(async (req, res, next) => {
-//   const admin = await new Admin(req.body).save();
-//   res.status(200).json({ message: "Admin signed up successfully!", admin });
-// });
+exports.signUpAdmin = catchAsyncErrors(async (req, res, next) => {
+  const admin = await new Admin(req.body).save();
+  res.status(200).json({ message: "Admin signed up successfully!", admin });
+});
 
 // exports.allAdmins = catchAsyncErrors(async (req, res, next) => {});
 

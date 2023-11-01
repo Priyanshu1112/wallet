@@ -4,7 +4,7 @@ const {
   currentAdmin,
   updateAdmin,
   changePasswordAdmin,
-  // signUpAdmin,/
+  signUpAdmin,
   // allAdmins,
   // addAdmin,
   // deleteAdmin,
@@ -23,7 +23,7 @@ const { isAuthenticated } = require("../middlewares/auth");
 router.get("/", isAuthenticated, currentAdmin);
 
 // POST /signUp-admin
-// router.post("/signUp-admin", signUpAdmin);
+router.post("/signUp-admin", signUpAdmin);
 
 // GET / all - admins;
 // router.get("/all-admins", allAdmins);
