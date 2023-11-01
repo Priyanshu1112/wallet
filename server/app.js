@@ -13,13 +13,11 @@ require("./models/database").connectDatabase();
 //     // credentials: true,
 //   })
 // );
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
-  res.header("Access-Control-Allow-Origin", "https://stock-whisperer.onrender.com");
-  res.header("Access-Control-Allow-Credentials", "true");
-  // You can also set other CORS headers as needed, such as methods and headers.
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+app.use(cors({
+  origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
+  methods: "POST, GET, OPTIONS, DELETE, PUT",
+  allowedHeaders: "*"
+}));
 
   if (req.method === "OPTIONS") {
     // Handle preflight requests for CORS
