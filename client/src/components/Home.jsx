@@ -73,9 +73,17 @@ const Home = () => {
           onClick={() => {
             navigate("/users/signIn");
           }}
-          className="signInBtn px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef]"
+          className="signInBtn px-[5vw] rounded-[3vh] text-white me-[3vw] py-[1vh] bg-[#6d8eef]"
         >
           Sign In
+        </button>
+        <button
+          onClick={() => {
+            navigate("/admin");
+          }}
+          className="signInBtn px-[4vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef]"
+        >
+          Admin
         </button>
       </div>
     </div>

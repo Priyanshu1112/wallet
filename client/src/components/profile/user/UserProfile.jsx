@@ -17,6 +17,7 @@ const UserProfile = () => {
         <p
           className="text-sm font-thin cursor-pointer"
           onClick={() => {
+            console.log("log out user");
             dispatch(asyncLogOutUser());
           }}
         >

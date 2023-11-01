@@ -62,6 +62,7 @@ export const asyncAddUser = (user) => async (dispatch) => {
 
 export const asyncUpdateUser = (user) => async (dispatch) => {
   try {
+    console.log("Admin Actions Update User ");
     const data = await axios.put(`/admin/update-user/${user.id}`, user);
     if (data.status == 200) {
       dispatch(asyncGetAllUsers());
@@ -108,8 +109,9 @@ export const asyncDeleteUsers = (id) => async (dispatch) => {
 
 export const asyncUpdateAdmin = (admin) => async (dispatch) => {
   try {
+    console.log("Admin Actions Update User ");
     const data = await axios.put("/admin/update-admin", admin);
-    // console.log(data);
+    console.log(data);
     if (data.status == 200) {
       dispatch(authenticateAdmin(data.data.admin));
       return 200;

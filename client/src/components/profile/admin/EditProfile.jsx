@@ -59,7 +59,7 @@ const EditProfile = () => {
 
   const SubmitForm = () => {
     const toastId = toast("Updating Admin", { type: "info", autoClose: false });
-    // console.log(formData);
+    console.log(formData);
     dispatch(asyncUpdateAdmin(formData))
       .then((status) => {
         if (status == 200) {
