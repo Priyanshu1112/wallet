@@ -9,7 +9,7 @@ require("./models/database").connectDatabase();
 //cors
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com/"],
     credentials: true,
   })
 );
