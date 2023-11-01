@@ -19,14 +19,6 @@ app.use(cors({
   allowedHeaders: "*"
 }));
 
-  if (req.method === "OPTIONS") {
-    // Handle preflight requests for CORS
-    res.sendStatus(204); // No content, just indicate that CORS is allowed
-  } else {
-    // Continue with the next middleware or route handler
-    next();
-  }
-});
 
 //logger
 const logger = require("morgan");
