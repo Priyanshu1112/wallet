@@ -22,14 +22,24 @@ const Home = () => {
             <span className="text-[#F9CE2E]">.</span>
           </p>
         </div>
-        <button
-          onClick={() => {
-            navigate("/users/signIn");
-          }}
-          className="signInBtn px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef]"
-        >
-          Sign In
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              navigate("/users/signIn");
+            }}
+            className="signInBtn px-[4vw] me-[2vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef]"
+          >
+            Sign In
+          </button>
+          <button
+            onClick={() => {
+              navigate("/admin");
+            }}
+            className="signInBtn px-[4vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef]"
+          >
+            Admin
+          </button>
+        </div>
       </div>
       <div
         className="w-full h-[65vh] pt-[5vh] flex flex-col justify-between  sm:w-[60vw] sm:h-screen"
