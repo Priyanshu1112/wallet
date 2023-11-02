@@ -25,6 +25,7 @@ app.use(
     maxAge: 1800,
     methods: "POST, GET, OPTIONS, DELETE, PUT",
     allowedHeaders: ["content-type"],
+    optionsSuccessStatus: 200,
   })
 );
 
