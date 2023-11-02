@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../server/utils"
+		},
+		{
+			"path": "../server/routes"
+		},
+		{
+			"path": "../server/models"
+		},
+		{
+			"path": "../server/middlewares"
+		},
+		{
+			"path": "../server/controllers"
+		}
+	],
+	"settings": {}
+}

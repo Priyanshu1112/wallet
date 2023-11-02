@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { asyncSignInUser } from "../../store/actions/userActions";
 import { toast } from "react-toastify";
@@ -42,9 +42,14 @@ const UsersSignIn = () => {
     SubmitForm();
   };
 
+  useEffect(() => {
+    console.log(isLoading);
+  }, [isLoading]);
+
   const SubmitForm = () => {
     console.log(formData);
     setIsLoading(true);
+    console.log(isLoading);
     dispatch(asyncSignInUser(formData))
       .then((status) => {
         if (status != 200) {
@@ -56,14 +61,15 @@ const UsersSignIn = () => {
             toast("Wrong Credentials!", { type: "error", autoClose: 3000 });
           }
         }
+        setIsLoading(false);
       })
       .catch(() => {
         toast("Error signing in: " + error.message, {
           type: "error",
           autoClose: 3000,
         });
+        setIsLoading(false);
       });
-    setIsLoading(false);
   };
 
   return (
@@ -122,9 +128,10 @@ const UsersSignIn = () => {
           <div className="text-center">
             <button
               disabled={isLoading}
-              className="px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef] "
+              className="px-[5vw] rounded-[3vh] text-white py-[1vh] "
+              style={{ backgroundColor: `${isLoading ? "grey" : "#6d8eef"}` }}
             >
-              {isLoading ? "Signing In" : "Sign In"}
+              {isLoading ? "Signing In..." : "Sign In"}
             </button>
           </div>
         </form>

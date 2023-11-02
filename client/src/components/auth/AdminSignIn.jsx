@@ -58,14 +58,15 @@ const AdminSignIn = () => {
             toast("Wrong Credentials!", { type: "error", autoClose: 3000 });
           }
         }
+        setIsLoading(false);
       })
       .catch(() => {
         toast("Error signing in: " + error.message, {
           type: "error",
           autoClose: 3000,
         });
+        setIsLoading(false);
       });
-    setIsLoading(false);
   };
 
   return (
@@ -124,9 +125,10 @@ const AdminSignIn = () => {
           <div className="text-center">
             <button
               disabled={isLoading}
-              className="px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef] "
+              className="px-[5vw] rounded-[3vh] text-white py-[1vh] "
+              style={{ backgroundColor: `${isLoading ? "grey" : "#6d8eef"}` }}
             >
-              {isLoading ? "Signing In" : "Sign In"}
+              {isLoading ? "Signing In..." : "Sign In"}
             </button>
           </div>
         </form>
