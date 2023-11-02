@@ -7,6 +7,8 @@ const AdminSignIn = () => {
   const dispatch = useDispatch();
   // const navigate = useNavigate();
   // const { admin, isAuthenticated } = useSelector((state) => state.admin);
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -43,6 +45,7 @@ const AdminSignIn = () => {
 
   const SubmitForm = () => {
     console.log(formData);
+    setIsLoading(true);
 
     dispatch(asyncSignInAdmin(formData))
       .then((status) => {
@@ -62,6 +65,7 @@ const AdminSignIn = () => {
           autoClose: 3000,
         });
       });
+    setIsLoading(false);
   };
 
   return (
@@ -118,8 +122,11 @@ const AdminSignIn = () => {
           </div>
 
           <div className="text-center">
-            <button className="px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef] ">
-              Sign In
+            <button
+              disabled={isLoading}
+              className="px-[5vw] rounded-[3vh] text-white py-[1vh] bg-[#6d8eef] "
+            >
+              {isLoading ? "Signing In" : "Sign In"}
             </button>
           </div>
         </form>
