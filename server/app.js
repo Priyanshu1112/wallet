@@ -13,15 +13,16 @@ require("./models/database").connectDatabase();
 //     credentials: true,
 //   })
 // );
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
-    credentials: true,
-    maxAge: 1800,
-    methods: "POST, GET, OPTIONS, DELETE, PUT",
-    allowedHeaders: ["content-type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
+//     credentials: true,
+//     maxAge: 1800,
+//     methods: "POST, GET, OPTIONS, DELETE, PUT",
+//     allowedHeaders: ["content-type"],
+//   })
+// );
+app.use(cors())
 
 //logger
 const logger = require("morgan");
