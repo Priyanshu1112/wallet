@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 // Load environment variables from .env file
 dotenv.config();
@@ -17,11 +18,32 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://stock-whisperer.onrender.com"],
+    credentials: true,
+    maxAge: 1800,
+    methods: "POST, GET, OPTIONS, DELETE, PUT",
+    allowedHeaders: ["content-type"],
+  })
+);
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+//session and cookie
+const session = require("express-session");
+app.use(
+  session({
+    resave: true,
+    saveUninitialized: true,
+    secret: process.env.EXPRESS_SESSION_SECRET,
+  })
+);
+app.use(cookieParser());
 
 const indexRouter = require("./routes/indexRoutes");
 const adminRouter = require("./routes/adminRoutes");

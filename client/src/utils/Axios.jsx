@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://stock-whisperer-api.onrender.com/",
+  baseURL: "https://stock-whisperer-api-2.onrender.com/",
   // baseURL: "http://localhost:3000",
   withCredentials: true,
   headers: {
